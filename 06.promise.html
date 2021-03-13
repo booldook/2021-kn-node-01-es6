@@ -1,3 +1,60 @@
 <script>
+	/* function sum(a, b, fn) {
+		setTimeout(function(){
+			fn(a + b);
+		}, 0)
+	}
+
+	var c;
+	sum(10, 20, function(v) {
+		c = v;
+		console.log(c);
+	})
+	console.log(c); */
+
+	function sum(a, b) {
+		return new Promise(function(resolve, reject) {
+			setTimeout(function(){
+				try {
+					if(typeof a === 'number' && typeof b === 'number') {
+						resolve(a + b)
+					}
+					else {
+						throw new Error('숫자만 연산됩니다.');
+					}
+				}
+				catch(e) {
+					reject(e);
+				}
+			}, 0);
+		});	
+	}
+
+	sum(10, 20)
+	.then(function(result){
+		console.log(result);
+	})
+	.catch(function(e){
+		console.log(e);
+	})
+	/*
+	.finally(function(){
+		console.log('hi');
+	})
+	*/
 	
+	async function getSum(a, b) {
+		var r;
+		r = await sum(a, b);
+		console.log(r);
+	}
+
+	getSum(100, 200);
+
+	/*
+	async function getData() {
+		const user = await axios.get('/user/1');
+	}
+	$.get('./').then(function(r){}).catch()
+	*/
 </script>
