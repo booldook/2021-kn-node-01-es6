@@ -1,0 +1,19 @@
+<script>
+	const obj = {
+		firstName: '길동',
+		lastName: '홍',
+		age: 27,
+		fullName: function() {
+			return obj.lastName + obj.firstName;
+		},
+		detail: {
+			sum: 30
+		}
+	}
+
+	let { firstName: fName, lastName, fullName, detail } = obj;
+	console.log(	fName	);
+	console.log(	lastName	);
+	console.log(	detail.sum	);
+	console.log(	fullName()	);
+</script>
