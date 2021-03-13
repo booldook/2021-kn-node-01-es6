@@ -1,0 +1,59 @@
+<script>
+	// 구조분해할당
+	const arr = [1, 2, 3, 4, 5];
+	var [a, b, c] = arr;
+	console.log(a, b, c);
+	
+	// Set, Map
+	const map = new Map();
+	map.set('a', 'A');
+	map.set('b', 'B');
+	map.set('c', [1, 2, 3]);
+	map.set('d', function(){});
+	console.log(map.keys());
+	console.log(map.values());
+	console.log(map.entries());
+	console.log(map);
+	console.log(map.has('C'));
+	for(var [k, v] of map.entries()) {
+		console.log(k, v);
+	}
+
+	const set = new Set();
+	set.add(1);
+	set.add('2');
+	set.add('2');
+	set.add('2');
+	set.add('2');
+	set.add([1, 2, 3]);
+	set.add(function() {});
+	console.log(set);
+	console.log(set.keys());
+	console.log(set.values());
+	console.log(set.entries());
+
+	set.forEach((v, i) => {
+		console.log(v);
+	});
+
+
+	const Setting = {
+		name: '다적중 로또!',
+		count: 6,
+		maxNumber: 45
+	}
+	const { count, maxNumber } = Setting;
+	const getLotto = (count, maxNumber) => {
+		const numbers = new Set();
+		while(numbers.size !== count) {
+			numbers.add(getNumber(maxNumber))
+		}
+		return numbers;
+	}
+	const getNumber = maxNumber => Math.floor(Math.random() * maxNumber +1);
+	console.log( getLotto(count, maxNumber) );
+
+
+	const arr2 = [2, 3, ...arr, 8, 9];
+	console.log(arr2);
+</script>

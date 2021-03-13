@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Template String</title>
+</head>
+<body>
+	<table class="wrapper">
+		<tbody>
+
+		</tbody>
+	</table>
+	<script>
+		const users = [
+			{id: 1, name: '홍길동', kor: 70},
+			{id: 2, name: '홍길순', kor: 75},
+			{id: 3, name: '홍길만', kor: 80},
+		]
+		var tbody = document.querySelector('.wrapper > tbody');
+		users.forEach(function(v, i) {
+			var html = tbody.innerHTML;
+			html += `
+			<tr>
+				<td>${v.id}</td>
+				<td>${v.name}</td>
+				<td>${v.kor}</td>
+			</tr>
+			`;
+			tbody.innerHTML = html;
+		});
+	</script>
+</body>
+</html>
