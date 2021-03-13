@@ -16,4 +16,30 @@
 	console.log(	lastName	);
 	console.log(	detail.sum	);
 	console.log(	fullName()	);
+
+	// ES5
+	var Hero = (function(){
+		function Hero(_name) {
+			this.name = _name;
+		}
+		Hero.prototype.hello = function() {
+			console.log(this.name + '이(가) 인사합니다.');
+		}
+		return Hero;
+	})();
+
+	var hero = new Hero('불뚝');
+	hero.hello();
+
+	// ES6
+	class Hero2 {
+		constructor(_name) {
+			this.name = _name;
+		}
+		hello() {
+			console.log(this.name + '이(가) 인사합니다.');
+		}
+	}
+	var hero2 = new Hero('booldok');
+	hero2.hello();
 </script>
