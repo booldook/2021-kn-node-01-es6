@@ -1,0 +1,69 @@
+<script>
+	// for, for~in, forEach, map, filter..
+	// for~of
+
+	const arr = new Array(1, 2, 3, 4, 5);
+	arr.log = function(v){
+		console.log(v);
+	};
+	arr.a = 10;
+	console.log(arr);
+	for(let i in arr) {
+		console.log(arr[i]);
+	}
+	for(let v of arr) {
+		console.log(v+'번');
+	}
+	arr.forEach(function(v, i) {
+		console.log(v, i);
+	})
+
+	
+	function sum() {
+		
+	}
+	
+	const sum2 = function() {
+		
+	}
+
+	const sum3 = (a) => {
+		return 10 + a;
+	}
+
+	const sum4 = a => 10 + a;
+
+	console.log(	sum4(20)	);
+
+
+	const arr3 = arr.map(function(v){
+		return v * v;
+	})
+	console.log(arr3);
+
+	const arr4 = arr.map(v => v * v)
+	console.log(arr4);
+
+
+	function fn() {
+		var a = typeof argument[0] === 'object' ? argument[0] : {}; 
+		var b = typeof argument[1] === 'number' ? argument[1] : 10; 
+		var b = typeof argument[3] === 'string' ? argument[2] : 'swing'; 
+	}
+
+	// fn({}, function(){})
+
+	console.clear();
+
+	function hap(...arg) {
+		var sum = 0;
+		for(var v of arg) {
+			sum += v;
+		}
+		return sum;
+	}
+
+	var arr5 = [1, 2, 3, 4, 5, 6, 7]
+	console.log(hap(...arr5));
+
+</script>
